@@ -12,21 +12,13 @@ Complex PHP5 CURL library. See also official documentation: https://pay.g2a.com/
 ## Install (Composer): ##
 
 ```
-composer require tuxxx128/g2a-pay-php5-api
-```
-or just add:
-```
-{
-    "require": {
-        "tuxxx128/g2a-pay-php5-api": "dev-master"
-    }
-}
+composer require tuks128/g2a-pay-php5-api
 ```
 
 ## Initialization: ##
 
 ```
-<?php 
+<?php
 
 use Tuxxx128\G2aPay\G2aPayApi;
 use Tuxxx128\G2aPay\G2aPayItem;
@@ -38,7 +30,7 @@ Boolean type in construction determines mode of environment production (***true*
 
 ## Add new item to order list: ##
 ```
-<?php 
+<?php
 
 $item = (new G2aPayItem)->itemTemplate();
 
@@ -51,7 +43,7 @@ $g2aPayApi->addItem($item);
 
 ## Set discount (percents or fixed amount): ##
 ```
-<?php 
+<?php
 
 $item = (new G2aPayItem)->itemTemplate();
 
@@ -96,7 +88,7 @@ header('Location: '.$g2aPayApi->getRedirectUrlOnGateway());
 ## Get complete transaction detail ##
 
 ```
-<?php 
+<?php
 
 $transactionDetail = $g2aPayApi->getPaymentDetailById($transactionId);
 
@@ -107,7 +99,7 @@ var_dump($transactionDetail);
 Maybe you need detect environment in your application.
 
 ```
-<?php 
+<?php
 
 if($g2aPayApi->checkIsProductionEnvironment()) {
 	// ...
@@ -120,7 +112,7 @@ else {
 ## Verify IPN hash ##
 
 ```
-<?php 
+<?php
 
 if($_POST['hash'] == $g2aPayApi->calculateIpnHash($transactionId, $orderId, $amount)) {
 	// ...
