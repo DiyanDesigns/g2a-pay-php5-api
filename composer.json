@@ -1,0 +1,22 @@
+{
+	"name": "tuks128/g2a-pay-php5-api",
+	"type": "library",
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"authors": [
+		{
+			"name": "Martin Liprt",
+			"email": "tuxxx128@protonmail.com"
+		}
+	],
+	"autoload": {
+		"classmap": ["src/"]
+	},
+	"require": {
+		"php": ">=5.4.0"
+	}	,
+	"extra": {
+		"branch-alias": {
+			"dev-master": "v1.0"
+		}
+	}
+}
